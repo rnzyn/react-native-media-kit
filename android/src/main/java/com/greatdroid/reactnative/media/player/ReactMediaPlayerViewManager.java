@@ -51,7 +51,9 @@ public class ReactMediaPlayerViewManager extends SimpleViewManager<ReactMediaPla
   @ReactProp(name = "src")
   public void setSrc(ReactMediaPlayerView view, @Nullable String uri) {
     String appId = view.getContext().getPackageName();
-    if (!uri.startsWith("http")) {  uri = "android.resource://" + appId + "/" + uri; }
+    if (!uri.startsWith("http")) {
+      uri = "asset:///" + uri;
+    }
     Log.d(TAG, "setSrc...src=" + uri);
     view.setUri(uri);
   }
@@ -78,7 +80,12 @@ public class ReactMediaPlayerViewManager extends SimpleViewManager<ReactMediaPla
   public void setMuted(ReactMediaPlayerView view, boolean muted) {
     Log.d(TAG, "setMuted...muted=" + muted);
     view.setMuted(muted);
+  }
 
+  @ReactProp(name = "resizeMode")
+  public void setMuted(ReactMediaPlayerView view, @Nullable String resizeMode) {
+    Log.d(TAG, "setResizeMode...resizeMode=" + resizeMode);
+    view.setResizeMode(resizeMode);
   }
 
   ////////////////////////////////

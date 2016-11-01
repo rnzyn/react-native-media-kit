@@ -34,6 +34,7 @@ public class ReactMediaPlayerView extends FrameLayout implements LifecycleEventL
   private boolean autoplay;
   private boolean muted;
   private String preload;
+  private String resizeMode;
 
   private boolean playWhenReadySnapshot;
   private long playPositionSnapshot = 0;
@@ -162,6 +163,11 @@ public class ReactMediaPlayerView extends FrameLayout implements LifecycleEventL
     updateProps(mediaPlayerController);
   }
 
+  public void setResizeMode(String resizeMode) {
+    this.resizeMode = resizeMode;
+    updateProps(mediaPlayerController);
+  }
+
   public void setAutoplay(boolean autoplay) {
     this.autoplay = autoplay;
     updateProps(mediaPlayerController);
@@ -182,6 +188,7 @@ public class ReactMediaPlayerView extends FrameLayout implements LifecycleEventL
           playerController.prepareToPlay();
         }
       }
+      playerController.setResizeMode(resizeMode);
       playerController.setLoop(loop);
       playerController.setMuted(muted);
     }
