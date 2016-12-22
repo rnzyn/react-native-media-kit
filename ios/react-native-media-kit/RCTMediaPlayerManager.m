@@ -26,7 +26,7 @@ RCT_EXPORT_VIEW_PROPERTY(onPlayerProgress, RCTBubblingEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(onPlayerBufferChange, RCTBubblingEventBlock)
 
 
-- (NSDictionary<NSString *, id> *)constantsToExport {
+- (NSArray<id<RCTBridgeMethod>> *)methodsToExport {
   return [super constantsToExport];
 }
 
