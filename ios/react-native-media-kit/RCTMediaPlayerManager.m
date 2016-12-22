@@ -26,8 +26,8 @@ RCT_EXPORT_VIEW_PROPERTY(onPlayerProgress, RCTBubblingEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(onPlayerBufferChange, RCTBubblingEventBlock)
 
 
-- (NSArray<id<RCTBridgeMethod>> *)methodsToExport {
-  return [super constantsToExport];
+- (NSDictionary *)methodsToExport {
+    return @{};
 }
 
 RCT_EXPORT_METHOD(pause:(nonnull NSNumber *)reactTag) {
