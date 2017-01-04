@@ -278,8 +278,8 @@
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
   [self notifyPlayerFinished];
   if(player) {
-    [player seekToTime:kCMTimeZero];
     if (self.loop) {
+      [player seekToTime:kCMTimeZero];
       [self play];
     }
   }
