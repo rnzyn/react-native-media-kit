@@ -19,6 +19,7 @@ const RCTMediaPlayerView = requireNativeComponent('RCTMediaPlayerView', {
     src: PropTypes.string,
     autoplay: PropTypes.bool,
     preload: PropTypes.string,
+    resizeMode: PropTypes.string,
     loop: PropTypes.bool,
     muted: PropTypes.bool,
 
@@ -44,6 +45,7 @@ export default class MediaPlayerView extends React.Component {
     autoplay: false,
     controls: true,
     preload: 'none',
+    resizeMode: 'cover',
     loop: false,
   }
 

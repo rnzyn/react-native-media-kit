@@ -50,6 +50,16 @@
 - (void)initPlayerIfNeeded {
   if(!player) {
     NSURL *url;
+<<<<<<< HEAD
+    NSString *resourcePrefix = @"resource:";
+    if ([self.src hasPrefix:resourcePrefix]) {
+      NSString *resource = [self.src substringFromIndex:[resourcePrefix length]];
+      NSBundle *mainBundle = [NSBundle mainBundle];
+      NSString *file = [mainBundle pathForResource:resource ofType:nil];
+      url = [NSURL fileURLWithPath:file];
+    } else {
+      url = [NSURL URLWithString:self.src];
+=======
     NSString *httpPrefix = @"http";
     if ([self.src hasPrefix:httpPrefix]) {
       url = [NSURL URLWithString:self.src];
@@ -59,6 +69,7 @@
       NSBundle *mainBundle = [NSBundle mainBundle];
       NSString *file = [mainBundle pathForResource:resource ofType:resourceType];
       url = [NSURL fileURLWithPath:file];
+>>>>>>> e1501b1d7eafaa4fed13b7bcad1fd26f89c7962b
     }
     player = [AVPlayer playerWithURL:url];
     [self setPlayer:player];

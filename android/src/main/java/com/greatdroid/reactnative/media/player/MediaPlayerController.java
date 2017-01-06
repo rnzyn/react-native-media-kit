@@ -111,6 +111,10 @@ public class MediaPlayerController {
     resetPlayerForReuse();
   }
 
+  public void setResizeMode(String resizeMode) {
+
+  }
+
   public void setMuted(boolean muted) {
     this.muted = muted;
     if(audioTrackRenderer != null) {
@@ -320,7 +324,7 @@ public class MediaPlayerController {
     @Override
     public void onDrawnToSurface(Surface surface) {
       Log.i(TAG, "onDrawnToSurface...");
-      
+
     }
 
     @Override
